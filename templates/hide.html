@@ -1,0 +1,26 @@
+<html>
+  <head>
+
+<style>
+  #content {
+    display: none;
+}
+#show:target #content {
+    display: inline-block;
+}
+#show:target #open {
+  display: none;
+  </style>
+  </head>
+  
+<body>
+<div id="show">
+    <a href="#show" id="open">Open</a>
+    <div id="content">
+        Something in here
+        <a href="#hide" id="close" >Close</a>
+    </div>
+</div>
+
+</body>
+</html>

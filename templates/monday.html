@@ -1,0 +1,208 @@
+<html>
+  <head>
+    <style>
+     #content {
+       display: none;
+     }
+     #show:target #content {
+       display: inline-block;
+     }
+     #show:target #open {
+       display: none;
+    </style>
+  </head>
+  
+
+
+
+  <body>
+
+
+    <h1>Calling All Quizzards!</h1>
+
+    <p>The Pinball Quizzards are a crack team of ne'er-do-wells, rogues, and misfits who occasionally know the answers to questions. Every week, they contend for second place at pub trivia at local hipster bar Solid State.</p>
+
+    <p>Do you have what it takes to contend with the finest minds to be found in the 11377 zip code? More importantly, are you free this Wednesday night at 7:30 PM? </p>
+
+    <h2>Can You make it this week?</h2>
+
+
+
+    <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSewNZU__cZ8TzZo9PzmV4GdpwLTFfzZq0BV0rgDo4G7ohJNPA/formResponse"" method="post" target="hidden_iframe"
+	  onsubmit="submitted=true;">
+
+      <span class="login100-form-title p-b-37">
+	<label>Can you make it?</label>
+      </span>
+      
+      <div class="wrap-input100 validate-input m-b-20" data-validate="Coming?">
+	
+
+	<input type="radio" name = "entry.2056780545" value="Yes"> Yes </br>
+	<input type="radio" name = "entry.2056780545" value="No"> No </br>
+	<input type="radio" name = "entry.2056780545" value="Maybe" checked> Maybe </br> </br>
+
+
+	<span class="login100-form-title p-b-37">
+	  <label>Optional Comment</label>
+	</span>
+
+        
+	<div class="wrap-input100 validate-input m-b-20" data-validate="Comment">
+	  
+          <input class="input100" autocomplete="off" name="entry.795876464" type="text" placeholder="An Optional Comment" />
+
+	  <span class="focus-input100"></span>
+	</div>
+
+
+	<input name="entry.1979171210" type="hidden" value="{{ name }}">
+	<input name="entry.514266166" type="hidden" value="{{ email }}">
+	<input name="entry.226535988" type="hidden" value="{{ date }}">
+
+	
+
+	<span class="focus-input100"></span>
+      </div>
+
+
+      
+
+
+
+
+
+
+      <div class="container-login100-form-btn">
+	<input value="Submit" type="submit" class="login100-form-btn">
+
+
+
+
+      </div>
+
+    </form>
+
+
+
+    <h2>Sign up</h2>
+
+
+
+    <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeBSWsZKQz3cmQzX4VqRa1aQjNs7m3yggNogOWnevLdnRGszQ/formResponse" method="post" target="hidden_iframe"
+	  onsubmit="submitted=true;">
+
+      <span class="login100-form-title p-b-37">
+	<label>Your Name</label>
+      </span>
+
+      
+      <div class="wrap-input100 validate-input m-b-20" data-validate="Your Name">
+	
+        <input class="input100" autocomplete="off" name="entry.1979171210" type="text" placeholder="Your name" />
+
+        <!-- <input name="entry.54220057" type="hidden" value="Introduction to Sklearn"> -->
+
+	<span class="focus-input100"></span>
+      </div>
+
+
+      <span class="login100-form-title p-b-37">
+	<label>Your Email</label>
+      </span>
+
+
+      <div class="container-login100-form-btn">
+	<input value="Submit" type="submit" class="login100-form-btn">
+
+
+
+
+      </div>
+
+    </form>
+
+
+    <div id="show">
+      <a href="#show" id="open">Pinball Quizzards FAQ</a>
+      <div id="content">
+	<h2>Pinball Quizzards FAQ</h2>
+
+	<p>
+	  <strong>Q:</strong>
+	  Why are you called the Pinball Quizzards?
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  Because there's pinball in the bar. And because we do pub trivia. And "wizzard" with two z's is a Discworld reference? Ask Mia Kiyashka.
+	</p>
+
+
+	<p>
+	  <strong>Q:</strong>
+	  Why do you always come in second place?
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  Historically, the Quizzards fall down in the music round, which is always the penultimate round. 
+	</p>
+
+	<p>
+	  <strong>Q:</strong>
+	  Can I bring food into the bar?
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  Yes.
+	</p>
+
+
+	<p>
+	  <strong>Q:</strong>
+	  What makes you say Solid State is a hipster bar?
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  The owner wears a white cowboy hat. I rest my case.
+	</p>
+
+
+	<p>
+	  <strong>Q:</strong>
+	  Tell me of the mysterious Danny Friendly, host of pub trivia at Solid State.
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  That's not in the form of a question, but I'll respond. We know little of Danny Friendly, and the little we do know surfaces yet more questions. Danny Friendly has let slip he knows quizmaster Johnny Goodtimes, the originator of Quizzo. I entreat you not to pursue this feckless quest for forbidden knowledge, but—no—I see that steely glint of determination in your eye. Seek out this Johnny Goodtimes if you dare, and godspeed. But I warn you...do not face Danny Friendly without learning his secret vulnerability, lest you doom us all.
+
+	</p>
+
+	<p>
+	  <strong>Q:</strong>
+	  How did you make this bot?
+	</p>
+	<p>
+	  <strong>A:</strong>
+	  It's a Python script that runs on my laptop. If my laptop is off, no reminder that week. You can see the (pretty sloppy) code <a href="https://github.com/smythp/quizbot">here</a>.
+	</p>
+
+        <a href="#hide" id="close" ><p>Hide the FAQs</p></a>
+      </div>
+    </div>
+
+    <div id="mikolaj-tribute">
+      <h2>Mikolaj Franaszczuk</h2>
+      <p>Captain of the Quizzards</p>
+      <p>2019-2021</p>
+      <img src="images/mikolaj.jpg">
+      <p><strong>RIP</strong></p>
+      <p>Rest in Philadelphia</p>
+</div>
+
+
+  </body>
+</html>
+
+
+
+
