@@ -1,14 +1,46 @@
 <html>
+
   <head>
     <style>
-     #content {
-       display: none;
+     h1 {
+       font-style: italic;
+       font-size: 3em;
      }
-     #show:target #content {
-       display: inline-block;
+
+     #links {
+       margin: 0 0 3em 0;
      }
-     #show:target #open {
-       display: none;
+
+     #links .link {
+       margin-top: 1em;
+       display: block;
+     }
+
+
+     section {
+       padding: .5em 0 .5em 0;
+       border-bottom: solid;
+     }
+
+
+     #mikolaj-tribute {
+       text-align: center;
+     }
+
+     #mikolaj-tribute img {
+       height: 10em;
+     }
+
+
+     body {
+       margin: 0 10% 0 10%;
+     }
+
+     #content strong {
+       font-size: 1.5em;
+       padding-right: 1em;
+     }
+
     </style>
   </head>
   
@@ -17,114 +49,139 @@
 
   <body>
 
+    <section>
+      <h1>Calling All Quizzards!</h1>
 
-    <h1>Calling All Quizzards!</h1>
+      <p>The Pinball Quizzards are a crack team of ne'er-do-wells, rogues, and misfits who occasionally know the answers to questions. Every week, they contend for second place at pub trivia at local hipster bar Solid State.</p>
 
-    <p>The Pinball Quizzards are a crack team of ne'er-do-wells, rogues, and misfits who occasionally know the answers to questions. Every week, they contend for second place at pub trivia at local hipster bar Solid State.</p>
+      <p>Do you have what it takes to contend with the finest minds to be found in the 11377 zip code? More importantly, are you free this Wednesday night at 7:30 PM? </p>
 
-    <p>Do you have what it takes to contend with the finest minds to be found in the 11377 zip code? More importantly, are you free this Wednesday night at 7:30 PM? </p>
+    </section>
 
-    <h2>Can You make it this week?</h2>
+    <section>
+      <h2>Can You make it on {{ date }}?</h2>
+
+      <p>This email was sent to {{ name }}. If that's not you, see the "sign up" section below.</p>
 
 
 
-    <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSewNZU__cZ8TzZo9PzmV4GdpwLTFfzZq0BV0rgDo4G7ohJNPA/formResponse"" method="post" target="hidden_iframe"
-	  onsubmit="submitted=true;">
-
-      <span class="login100-form-title p-b-37">
-	<label>Can you make it?</label>
-      </span>
-      
-      <div class="wrap-input100 validate-input m-b-20" data-validate="Coming?">
-	
-
-	<input type="radio" name = "entry.2056780545" value="Yes"> Yes </br>
-	<input type="radio" name = "entry.2056780545" value="No"> No </br>
-	<input type="radio" name = "entry.2056780545" value="Maybe" checked> Maybe </br> </br>
-
+      <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSewNZU__cZ8TzZo9PzmV4GdpwLTFfzZq0BV0rgDo4G7ohJNPA/formResponse"" method="post" target="hidden_iframe"
+	    onsubmit="submitted=true;">
 
 	<span class="login100-form-title p-b-37">
-	  <label>Optional Comment</label>
+	  <p><label>Can you make it?</label></p>
 	</span>
-
-        
-	<div class="wrap-input100 validate-input m-b-20" data-validate="Comment">
+	
+	<div class="wrap-input100 validate-input m-b-20" data-validate="Coming?">
 	  
-          <input class="input100" autocomplete="off" name="entry.795876464" type="text" placeholder="An Optional Comment" />
+
+	  <input type="radio" name = "entry.2056780545" value="Yes"> Yes </br>
+	  <input type="radio" name = "entry.2056780545" value="No"> No </br>
+	  <input type="radio" name = "entry.2056780545" value="Maybe" checked> Maybe </br> </br>
+
+
+
+	  <span class="login100-form-title p-b-37">
+	    <p><label>Optional Comment (people will see this on Wednesday)</label></p>
+	  </span>
+
+	  <div class="wrap-input100 validate-input m-b-20" data-validate="Comment">
+	    
+            <input style="padding:1.5em" class="input100" autocomplete="off" name="entry.795876464" type="text" placeholder="An Optional Comment" />
+
+	    <span class="focus-input100"></span>
+	  </div>
+
+
+	  <input name="entry.1979171210" type="hidden" value="{{ name }}">
+	  <input name="entry.514266166" type="hidden" value="{{ email }}">
+	  <input name="entry.226535988" type="hidden" value="{{ date }}">
+
+	  
 
 	  <span class="focus-input100"></span>
 	</div>
 
 
-	<input name="entry.1979171210" type="hidden" value="{{ name }}">
-	<input name="entry.514266166" type="hidden" value="{{ email }}">
-	<input name="entry.226535988" type="hidden" value="{{ date }}">
-
 	
 
-	<span class="focus-input100"></span>
-      </div>
-
-
-      
 
 
 
 
 
-
-      <div class="container-login100-form-btn">
-	<input value="Submit" type="submit" class="login100-form-btn">
-
+	<div class="container-login100-form-btn">
+	  <input value="Submit" type="submit" class="login100-form-btn">
 
 
 
-      </div>
 
-    </form>
+	</div>
 
+      </form>
 
+    </section>
 
-    <h2>Sign up</h2>
+    <section>
 
+      <h2>Sign up</h2>
 
+      <p>Enter someone's email and they'll get emails from Quizbot.</p>
 
-    <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeBSWsZKQz3cmQzX4VqRa1aQjNs7m3yggNogOWnevLdnRGszQ/formResponse" method="post" target="hidden_iframe"
-	  onsubmit="submitted=true;">
+      <form class="login100-form validate-form" action="https://docs.google.com/forms/d/e/1FAIpQLSeBSWsZKQz3cmQzX4VqRa1aQjNs7m3yggNogOWnevLdnRGszQ/formResponse" method="post" target="hidden_iframe"
+	    onsubmit="submitted=true;">
 
-      <span class="login100-form-title p-b-37">
-	<label>Your Name</label>
-      </span>
+	<span class="login100-form-title p-b-37">
+	  <label>Your Name</label>
+	</span>
 
-      
-      <div class="wrap-input100 validate-input m-b-20" data-validate="Your Name">
 	
-        <input class="input100" autocomplete="off" name="entry.1979171210" type="text" placeholder="Your name" />
+	<div class="wrap-input100 validate-input m-b-20" data-validate="Your Name">
+	  
+          <input class="input100" autocomplete="off" name="entry.1979171210" type="text" placeholder="Your name" />
 
-        <!-- <input name="entry.54220057" type="hidden" value="Introduction to Sklearn"> -->
+          <!-- <input name="entry.54220057" type="hidden" value="Introduction to Sklearn"> -->
 
-	<span class="focus-input100"></span>
+	  <span class="focus-input100"></span>
+	</div>
+
+
+	<span class="login100-form-title p-b-37">
+	  <label>Your Email</label>
+	</span>
+
+
+	<div class="container-login100-form-btn">
+	  <input value="Submit" type="submit" class="login100-form-btn">
+
+
+
+
+	</div>
+
+      </form>
+
+    </section>
+
+    <section>
+
+      <h2>Useful Links</h2>
+
+      <div id="links">
+
+	<a class="link" href="mailto:{{ emails }}?subject=Pub%20Trivia%20on%20{{ date }}">Email the Current Quizzards</a>
+
+	<a href="https://docs.google.com/spreadsheets/d/1N_qyPcmDCosCLNd3rdP4dXB9VrWtendAeua1O8IJdBA/edit?resourcekey#gid=2135530720" class="link">
+	  Unsubscribe from this list. (By editing the form)
+	</a>
+
+
       </div>
+	</div>
 
+    </section>
 
-      <span class="login100-form-title p-b-37">
-	<label>Your Email</label>
-      </span>
-
-
-      <div class="container-login100-form-btn">
-	<input value="Submit" type="submit" class="login100-form-btn">
-
-
-
-
-      </div>
-
-    </form>
-
-
-    <div id="show">
-      <a href="#show" id="open">Pinball Quizzards FAQ</a>
+    <section>
       <div id="content">
 	<h2>Pinball Quizzards FAQ</h2>
 
@@ -144,7 +201,7 @@
 	</p>
 	<p>
 	  <strong>A:</strong>
-	  Historically, the Quizzards fall down in the music round, which is always the penultimate round. 
+	  Historically, and by tradition, the Quizzards fall down in the music round, which is always the penultimate round. 
 	</p>
 
 	<p>
@@ -187,18 +244,23 @@
 	</p>
 
         <a href="#hide" id="close" ><p>Hide the FAQs</p></a>
+
       </div>
-    </div>
 
-    <div id="mikolaj-tribute">
-      <h2>Mikolaj Franaszczuk</h2>
-      <p>Captain of the Quizzards</p>
-      <p>2019-2021</p>
-      <img src="images/mikolaj.jpg">
-      <p><strong>RIP</strong></p>
-      <p>Rest in Philadelphia</p>
-</div>
+    </section>
 
+
+    <section>
+
+      <div id="mikolaj-tribute">
+	<h2>Mikolaj Franaszczuk</h2>
+	<p>Captain of the Quizzards</p>
+	<p>2019-2021</p>
+	<img src="https://github.com/smythp/quizbot/raw/master/templates/images/mikolaj.jpg">
+	<p><strong>RIP</strong></p>
+	<p>Rest in Philadelphia</p>
+      </div>
+    </section>
 
   </body>
 </html>

@@ -1,3 +1,7 @@
+import datetime
+import requests
+from io import StringIO
+import csv
 from jinja2 import Template
 import smtplib, ssl
 from email.mime.text import MIMEText
@@ -8,37 +12,41 @@ sender_name = "Quizbot <patricksmyth01@gmail.com>"
 sender_email = "patricksmyth01@gmail.com"
 
 
-def send_mail(receiver_email, receiver_name, date, day):
 
 
 
-    # receiver_email = "patricksmyth01@gmail.com"
+def next_weekday(d, weekday):
+    days_ahead = weekday - d.weekday()
+    if days_ahead <= 0: # Target day already happened this week
+        days_ahead += 7
+    return d + datetime.timedelta(days_ahead)
 
+
+def next_wednesday_string():
+
+    return next_weekday(datetime.date.today(), 2)
+
+
+
+def get_current_quizzards():
+    r = requests.get('https://docs.google.com/spreadsheets/d/1N_qyPcmDCosCLNd3rdP4dXB9VrWtendAeua1O8IJdBA/export?format=csv&gid=2135530720')
+
+    scsv = r.text
+
+    f = StringIO(scsv)
+    reader = csv.DictReader(f, delimiter=',')
+
+    return reader
+
+
+
+def send_mail(receiver_email, receiver_name, subject, text, html):
 
     message = MIMEMultipart("alternative")
 
-    if day == 'monday':
-        message["Subject"] = f"Calling All Quizzards! Can You Quiz on {date}?"
-    else:
-        raise "Not a valid day, needs to be monday or wednesday"
-
-
-    
+    message["Subject"] = subject
     message["From"] = sender_name
     message["To"] = receiver_email
-
-
-    text = 'Plain text version'
-
-
-    jinja2_template_string = open("templates/monday.html", 'r').read()
-    template = Template(jinja2_template_string)
-
-    html = template.render(email=receiver_email,
-                           name=receiver_name,
-                           date='1/17/21')
-
-
 
     # Turn these into plain/html MIMEText objects
     part1 = MIMEText(text, "plain")
@@ -58,4 +66,57 @@ def send_mail(receiver_email, receiver_name, date, day):
             )
 
 
-send_mail('patricksmyth01@gmail.com', "Patrick", '7/3/21', 'monday')
+
+def single_monday_email(receiver_email, receiver_name, emails):
+
+
+
+    date = next_wednesday_string()
+
+    subject = f"Calling All Quizzards! Can you make it on {date}?"
+    
+    text = 'Plain text version'
+
+
+    jinja2_template_string = open("templates/monday_inline.html", 'r').read()
+    template = Template(jinja2_template_string)
+
+    html = template.render(email=receiver_email,
+                           name=receiver_name,
+                           date=date,
+                           emails=emails)
+
+
+
+    send_mail(receiver_email, receiver_name, subject, text, html)
+
+
+
+
+
+
+
+def send_all_monday_emails():
+
+    quizzards_reader = get_current_quizzards()
+    
+    quizzards = list(quizzards_reader)
+
+    emails = ''
+
+    for quizzard in quizzards:
+        emails += quizzard['Your Email'] + ','    
+        
+
+        # print(quizzards)
+
+    for quizzard in quizzards:
+        single_monday_email(
+            quizzard['Your Email'],
+            quizzard['Your Name'],
+            emails
+            )
+        
+
+
+send_all_monday_emails()        
